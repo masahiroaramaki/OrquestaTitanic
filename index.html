@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es"> 
 <head>
-<meta charset="UTF-8" />
+<meta charset="charset=iso-8859-1" />
 <title>Orquesta TITANIC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
@@ -204,9 +204,11 @@ playSlide();
 
 
 <!--///////Titanic///////-->
- <div data-role="page" id="titanic" data-add-back-btn="true">
+ <div data-role="page" id="titanic" data-title="Orquesta Titanic" data-add-back-btn="false">
 
    <div data-role="header">
+   <a href="index.html" data-role="button" data-icon="arrow-l" data-iconpos="left">
+   Back</a>
      <h1>Orquesta Titanic</h1>
    </div><!--header-->
 
@@ -441,7 +443,7 @@ playSlide();
    </div>
 
    <div data-role="content">	
-     <div class="youtube"><h2>Videos de YouTube</h2>
+     <div class="youtube"><h2>Últimos videos de YouTube</h2>
 	 <iframe width="294" height="220" 
 	 src="http://www.youtube.com/embed/0F8i6qh2qUY" frameborder="0" allowfullscreen></iframe>
 	 </div>

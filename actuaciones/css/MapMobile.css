@@ -5,11 +5,11 @@ input[type='text'],input[type='button'],select,textarea {
 		   }
 h2{
 	color:#000000;
-	border: 1px solid red;
+	
 	text-align:center;
 	width:250px;
-	background-color:#FFFFFF;
-	margin:auto;
+	
+	margin:20px auto;
 	}
 p.boloLat,p.boloLng,p.boloName{
    display:none;

@@ -1,7 +1,0 @@
-Key for browser apps (with referers)
-API key: 	
- 	
-AIzaSyCIWt_sE4bt5NHf_Ygvg6dBQXIV7_aSn9E
-
-IE location bar
-javascript:void(prompt('',gApplication.getMap().getCenter()));

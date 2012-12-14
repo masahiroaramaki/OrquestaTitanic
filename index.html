@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="es"> 
 <head>
-<meta charset="charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Orquesta TITANIC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
-<link href="css/jquery-mobile.css" type="text/css" rel="stylesheet" />
-<link href="actuaciones/css/MapMobile.css" rel="stylesheet" type="text/css" />
-<link href="css/photoswipe.css" type="text/css" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/flexslider.css" type="text/css">
+
+<link href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" rel="stylesheet"  />
+<link href="css/style.css"rel="stylesheet" type="text/css" />
+<link href="css/MapMobile.css" rel="stylesheet" type="text/css" />
+<link href="css/flexslider.css" rel="stylesheet"  type="text/css" />
+<link href="css/photoswipe.css"  rel="stylesheet" type="text/css" />
+<link href="css/jquery-mobile.css"  rel="stylesheet" type="text/css" />
 
 <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=true&region=ES"></script>
-<script src="actuaciones/js/jquery.ui.map.full.min.js" type="text/javascript"></script>
-<script src="actuaciones/js/Maps.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/klass.min.js"></script>
-<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+<script src="js/jquery.ui.map.full.min.js" type="text/javascript"></script>
+<script src="js/Maps.js" type="text/javascript"></script>
+<script src="js/klass.min.js" type="text/javascript" ></script>
+<script src="js/code.photoswipe.jquery-3.0.5.min.js" type="text/javascript" ></script>
 <script src="js/jquery.flexslider.js"></script>
 <script src="phonegap.js"></script>
 <script src="childbrowser.js"></script>
-
 <script type="text/javascript">
 // Google Analytics
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'tracking code']);
 
-$(document).bind('mobileinit', function(){
-	// espaÃ±ol
+ $(document).bind("mobileinit", function(){
+	// español
 	$.mobile.loadingMessage = 'Cargando';
 	$.mobile.pageLoadErrorMessage = 'Error en cargar';
 	$.mobile.page.prototype.options.backBtnText = 'Volver';
 	$.mobile.dialog.prototype.options.closeBtnText = 'Cerrar';
 	$.mobile.selectmenu.prototype.options.closeText= 'Cerrar';
 	$.mobile.listview.prototype.options.filterPlaceholder = 'Buscar';
+	$.support.cors='true';
+	$.mobile.allowCrossDomainPages='true';
+	$.mobile.getMaxScrollForTransition='5';
 
 	// Boton volver
 	$.mobile.page.prototype.options.addBackBtn = true;	
@@ -44,7 +47,8 @@ $(document).bind('mobileinit', function(){
 	$(':jqmData(role="page")').live('pageshow', function (event, ui) {
 		_gaq.push(['_trackPageview', $.mobile.activePage.jqmData('url')]);
 	});
-});
+
+});//bind mobileinit
 
 $(document).ready(function(){
 	// home boton
@@ -53,7 +57,9 @@ $(document).ready(function(){
 			home = $.mobile.firstPage;
 			if ( page.attr('id') != home.attr('id')) {
 				page.find(':jqmData(role="header")').append(
-					$('<a href="#' + home.attr('id') + '" data-transition="slideup" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right"></a>')
+					$('<a href="#' + home.attr('id') + '"' + ' ' + 'data-transition="slideup"'
+					+ ' ' + 'data-role="button"' + 'data-icon="home"' + ' ' + 'data-iconpos="notext"'
+					+ ' ' + 'class="ui-btn-right"' + '>' + '</a>')
 			);
 		}
 		
@@ -93,7 +99,7 @@ $(document).ready(function(){
 });
 </script>
 <script type="text/javascript">		
-		/* IMPORTANTE!!! AÃ‘ADIR  rel="external"  al <a> tags. */	
+		/* IMPORTANTE!!! AÑADIR  rel="external"  al <a> tags. */	
 		(function(window, $, PhotoSwipe){			
 			$(document).ready(function(){				
 				$('div.gallery-page')
@@ -162,7 +168,11 @@ playSlide();
 </script>
 
 </head>
+
 <body>
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
 <!--Home-->
  <div data-role="page" id="top">
 
@@ -202,29 +212,30 @@ playSlide();
  </div><!--page-->
 <!--///////EndHome///////-->
 
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 <!--///////Titanic///////-->
  <div data-role="page" id="titanic" data-title="Orquesta Titanic" data-add-back-btn="false">
 
-   <div data-role="header">
+   <div data-role="header" data-position="fixed">
    <a href="index.html" data-role="button" data-icon="arrow-l" data-iconpos="left">
    Back</a>
      <h1>Orquesta Titanic</h1>
    </div><!--header-->
 
    <div data-role="content">
-     <img src="fotos/titanicHome.jpg" class="wide" />
+     <img src="titanic/titanicHome.jpg" class="wide" />
 	   
-	      <a href="#titanicComponentes" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="a">
-		  Componentes</a>
-	      <a href="#titanicNoticias" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="a">
-		  Noticias</a> 
-	      <a href="actuaciones/titanicActuaciones.htm" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="a">
-		  Actuaciones</a> 
-	      <a href="#titanicFotos" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="a">
-		  Fotos</a> 
-	      <a href="#titanicVideos" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="a">
-		  Videos</a> 
+	      <a href="#titanicComponentes" data-role="button" data-icon="arrow-r" data-iconpos="right" 
+		  data-theme="a">Componentes</a>
+	      <a href="#titanicNoticias" data-role="button" data-icon="arrow-r" data-iconpos="right" 
+		  data-theme="a">Noticias</a> 
+	      <a href="#titanicActuaciones" data-role="button" data-icon="arrow-r" 
+		  data-iconpos="right" data-theme="a">Actuaciones</a> 
+	      <a href="#titanicFotos" data-role="button" data-icon="arrow-r" data-iconpos="right" 
+		  data-theme="a">Fotos</a> 
+	      <a href="#titanicVideos" data-role="button" data-icon="arrow-r" data-iconpos="right" 
+		  data-theme="a">Videos</a> 
           <a href="# " data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="a">
 		  ' '</a> 
     </div><!--content-->
@@ -232,9 +243,10 @@ playSlide();
     <div data-role="footer">
       <div data-role="navbar">
         <ul>
-          <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" target="_blank">PC site</a></li>
+          <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		  target="_blank">PC site</a></li>
           <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
-          <li><a href="#contacto" data-icon="star" data-transition="pop">Contacto</a></li>
+          <li><a href="#contacto" data-icon="star" data-transition="slideup">Contacto</a></li>
         </ul>
       </div>
       <h4><a href="tel:962956060">96 295 6060</a></h4>
@@ -242,38 +254,41 @@ playSlide();
 
  </div><!--page-->
 <!--///////EndTitanic///////-->
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////-->
+
 <!--//////titanicComponentes///-->
  <div data-role="page" id="titanicComponentes" data-add-back-btn="true">
-     <div data-role="header">
+     <div data-role="header" data-position="fixed">
      <h1>Componentes de la Orquesta TITANIC</h1>
    </div> 
      
 <div data-role="content">
 <h2>Perfil de los componentes</h2>
-<p>Perfil en el botÃ³n grande, Fotos en el botÃ³n de la derecha (dialogo)</p>
+<p>Perfil en el botón grande, Fotos en el botón de la derecha (dialogo)</p>
 <ul data-role="listview" data-split-icon="check" data-inset="true" data-filter="true"  >
-	<li><a href="#kikoPerfil" title="perfil">Kiko Torres(Voz y Guitarra elÃ©ctrica)</a>
+	<li><a href="#kikoPerfil" title="perfil">Kiko Torres(Voz y Guitarra eléctrica)</a>
 	<a href="#kikoDialog" data-rel="dialog"></a></li>
-	<li><a href="#albertPerfil" title="perfil">Albert AndrÃ©s (Voz y Guitarra acÃºstica)</a>
+	<li><a href="#albertPerfil" title="perfil">Albert Andrés (Voz y Guitarra acústica)</a>
 	<a href="#albertDialog" data-rel="dialog" title="foto"></a></li>
 	<li><a href="#karlaPerfil" title="perfil">Karla Fos(Voz)</a>
 	<a href="#karlaDialog" data-rel="dialog" title="foto"></a></li>
 	<li><a href="#fedePerfil" title="perfil">Federico Rizzo (Teclados)</a>
 	<a href="#fedeDialog" data-rel="dialog" title="foto"></a></li>
-	<li><a href="perfil/masahiroPerfil.htm" title="perfil">Masahiro Aramaki (Guitarra)</a>
+	<li><a href="#masahiroPerfil" title="perfil">Masahiro Aramaki (Guitarra)</a>
 	<a href="#masahiroDialog" data-rel="dialog" title="foto"></a></li>
 	<li><a href="#kokiPerfil" title="perfil">Jorge Serra "Koki"(Bajo)</a>
 	<a href="#kokiDialog" data-rel="dialog" title="foto"></a></li>
-	<li><a href="#javiPerfil" title="perfil">Javi Blanquer(BaterÃ­as)</a>
+	<li><a href="#javiPerfil" title="perfil">Javi Blanquer(Baterías)</a>
 	<a href="#javiDialog" data-rel="dialog" title="foto"></a></li>
 	<li><a href="#oscarPerfil" title="perfil">Oscar Albiach(Trompeta)</a>
 	<a href="#oscarDialog" data-rel="dialog" title="foto"></a></li>
-	<li><a href="#masahiroPerfil" title="perfil">Joan Emili "Comandant"(TrombÃ³n)</a>
-	<a href="#masahiroDialog" data-rel="dialog" title="foto"></a></li>
-	<li><a href="#raulPerfil" title="perfil">RaÃºl Richart(Saxos)</a>
+	<li><a href="#comanPerfil" title="perfil">Joan Emili "Comandant"(Trombón)</a>
+	<a href="#comanDialog" data-rel="dialog" title="foto"></a></li>
+	<li><a href="#raulPerfil" title="perfil">Raúl Richart(Saxos)</a>
 	<a href="#raulDialog" data-rel="dialog" title="foto"></a></li>
 	<li><a href="#bernaPerfil" title="perfil">Berna (P.A)</a>
-	<a href="#bernaDialog" data-rel="dialog" title="foto"></a></li>
+	<a href="#dialog/bernaDialog" data-rel="dialog" title="foto"></a></li>
 	<li><a href="#daniPerfil" title="perfil">Dani (Luces)</a>
 	<a href="#daniDialog" data-rel="dialog" title="foto"></a></li>
 	<li><a href="#">hay</a></li>
@@ -284,9 +299,10 @@ playSlide();
   <div data-role="footer">
       <div data-role="navbar">
         <ul>
-          <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" target="_blank">PC site</a></li>
+          <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		  target="_blank">PC site</a></li>
           <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
-          <li><a href="#contacto" data-icon="star" data-transition="pop">Contacto</a></li>
+          <li><a href="#contacto" data-icon="star" data-transition="slideup">Contacto</a></li>
         </ul>
       </div>
       <h4><a href="tel:962956060">96 295 6060</a></h4>
@@ -294,110 +310,851 @@ playSlide();
 </div>
 <!--//////endtitanicComponentes///-->
 
-<!--masahirodialog-->
- <div data-role="page" id="masahiroDialog"  >
+<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--dialog-->
+
+<!--//////////////////////////kiko-dialog//////////////////////////////////-->
+<!--///////////////////////endKiko-dialog//////////////////////////////////-->
+<!--/////////////////////////Albert-dialog/////////////////////////////////-->
+<!--///////////////////////endAlbert-dialog////////////////////////////////-->
+<!--/////////////////////////Karla-dialog//////////////////////////////////-->
+<!--///////////////////////endKarla-dialog/////////////////////////////////-->
+<!--//////////////////////////Fede-dialog//////////////////////////////////-->
+<!--///////////////////////endFede-dialog//////////////////////////////////-->
+<!--/////////////////////////////////masahiro-dialog//////////////////////-->
+<div data-role="page" id="masahiroDialog"  >
 
    <div data-role="header" data-theme="b">
      <h1>Masahiro Aramaki</h1>
    </div>
 
     <div data-role="content" data-theme="b">
-	<img src="fotos/perfil/masahiro/kikoMasa.jpg"/>
+	<img src="titanic/titanicPerfil/fotosPerfil/masahiro/kikoMasa.jpg"/>
 	</div>	
 </div>
-<!--page--endMasahiroDialog-->
+<!--/////////////////////////endMasahiro-dialog////////////////////////////-->
 
+<!--//////////////////////////Koki-dialog//////////////////////////////////-->
+<!--///////////////////////endKoki-dialog//////////////////////////////////-->
+<!--//////////////////////////Javi-dialog//////////////////////////////////-->
+<!--///////////////////////endJavi-dialog//////////////////////////////////-->
+<!--/////////////////////////Oscar-dialog//////////////////////////////////-->
+<!--///////////////////////endOscar-dialog/////////////////////////////////-->
+<!--/////////////////////////Coman-dialog//////////////////////////////////-->
+<!--///////////////////////endComan-dialog/////////////////////////////////-->
+<!--//////////////////////////Raul-dialog//////////////////////////////////-->
+<!--///////////////////////endRaul-dialog//////////////////////////////////-->
+<!--/////////////////////////Berna-dialog//////////////////////////////////-->
+<!--///////////////////////endBerna-dialog/////////////////////////////////-->
+<!--//////////////////////////Dani-dialog//////////////////////////////////-->
+<!--///////////////////////endDani-dialog//////////////////////////////////-->
+<!--endDialog-->
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--perfil-->
+
+<!--//////////////////////////kiko-perfil//////////////////////////////////-->
+<!--///////////////////////endKiko-perfil//////////////////////////////////-->
+<!--/////////////////////////Albert-perfil/////////////////////////////////-->
+<!--///////////////////////endAlbert-perfil////////////////////////////////-->
+<!--/////////////////////////Karla-perfil//////////////////////////////////-->
+<!--///////////////////////endKarla-perfil/////////////////////////////////-->
+<!--//////////////////////////Fede-perfil//////////////////////////////////-->
+<!--///////////////////////endFede-dialog//////////////////////////////////-->
+<!--///////////////////////Masahiro-perfil/////////////////////////////////-->
+<div data-role="page" id="masahiroPerfil" data-add-back-btn="true" >
+	
+		<div data-role="header" data-position="fixed">
+			<h1>Masahiro Aramaki</h1>
+		</div>
+
+ <div data-role="content" >
+	<div id="cincoFotosAparecen"> <img src="titanic/titanicPerfil/fotosPerfil/masahiro/kikoMasa.jpg" class="primera"/> 
+      <img src="titanic/titanicPerfil/fotosPerfil/masahiro/Poster.jpg" class="segunda"/> 
+      <img src="titanic/titanicPerfil/fotosPerfil/masahiro/Alfafara.jpg" class="tercera" /> 
+      <img src="titanic/titanicPerfil/fotosPerfil/masahiro/Planes.jpg"  class="cuarta"/> 
+      <img src="titanic/titanicPerfil/fotosPerfil/masahiro/Vinalesa.jpg"  class="quinta"/> 
+    </div>
+    <div class="botonReplay"> 
+      <button data-inline="true">Replay</button>
+    </div>
+    <div class="presentacion"> 
+      <h3>Curriculum vitae</h3>
+      <p>Empezó a tocar la guitarra a los 12 años. blablablablablablablablabalblablabalbalba 
+        blablablablabalbalbalbalbalblablablalbalb blablalbalblalblalblalblalblalbalblalblalb</p>
+    </div>
+	
+		<h3>RSS</h3>
+		<ul data-role="listview">
+		<li><a href="http://www.facebook.com" >
+		<img src="logos/facebook.jpg" class="ui-li-icon">Facebook</a></li>
+		<li><a href="http://www.twitter.com">
+		<img src="logos/twitter.jpg" class="ui-li-icon">Twitter</a></li>
+		<li><a href="http://www.youtube.com">
+		<img src="logos/youtube.jpg" class="ui-li-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;youTube</a></li>
+		<li><a href="http://www.ustream.tv">
+		<img src="logos/ustream.jpg" class="ui-li-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ustream</a></li>
+		<li><a href="http://www.twitvid.com">
+		<img src="logos/twitvid.jpg" class="ui-li-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Twitvid</a></li>
+		<li><a href="http://www.mixi.jp">
+		<img src="logos/mixi.jpg" class="ui-li-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mixi 
+		(en Japon&eacute;s)</a></li>
+		</ul>
+		<!--ustream,twitvid,mixi-->
+		<h3>E-mail</h3>
+		
+		<a href="mailto:info@masahiroaramaki.com" data-role="button" data-inline="true" >Web-mail</a>
+		<div data-role="controlgroup" data-type="horizontal" data-mini="true">
+		<a href="mailto:masahiroaramaki@gmail.com" data-role="button" data-inline="true">Gmail</a>
+		<a href="mailto:masahiroaramaki@hotmail.com" data-role="button" data-inline="true">Hotmail</a>
+		</div>
+		
+    <h3>P&aacute;gina WEB</h3>
+		<a href=http://www.masahiroaramaki.com target="_blank" data-role="button" data-inline="true">
+		masahiroaramaki.com</a>
+		
+		
+</div><!--content-->
+	<div data-role="footer">
+   <div data-role="navbar">
+       <ul>
+         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		 target="_blank">PC site</a></li>
+         <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
+         <li><a href="#contacto" data-icon="star" data-transition="slideup">Contacto</a></li>
+       </ul>
+    </div><!--navbar-->
+       <h4><a href="tel:96?2956060">96 295 6060</a></h4>
+   </div><!--footer-->
+ 
+ </div><!--page-->
+<!--///////////////////////endMasahiro-perfil//////////////////////////////-->
+<!--//////////////////////////Koki-perfil//////////////////////////////////-->
+<!--///////////////////////endKoki-perfil//////////////////////////////////-->
+<!--//////////////////////////Javi-perfil//////////////////////////////////-->
+<!--///////////////////////endJavi-perfil//////////////////////////////////-->
+<!--/////////////////////////Oscar-perfil//////////////////////////////////-->
+<!--///////////////////////endOscar-perfil/////////////////////////////////-->
+<!--/////////////////////////Coman-perfil//////////////////////////////////-->
+<!--///////////////////////endComan-perfil/////////////////////////////////-->
+<!--//////////////////////////Raul-perfil//////////////////////////////////-->
+<!--///////////////////////endRaul-dialog//////////////////////////////////-->
+<!--/////////////////////////Berna-perfil//////////////////////////////////-->
+<!--///////////////////////endBerna-perfil/////////////////////////////////-->
+<!--//////////////////////////Dani-perfil//////////////////////////////////-->
+<!--///////////////////////endDani-perfil//////////////////////////////////-->
+
+<!--endPerfil-->
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--titanicNoticias-->
+<div data-role="page" id="titanicNoticias" data-add-back-btn="true">
+ 
+   <div data-role="header" data-position="fixed">
+     <h1>Últimas noticias</h1>
+   </div>
+ 
+   <div data-role="content">
+           
+    <div class="flexslider"> 
+      <ul class="slides">
+        <li> 
+          <h3>Últimas noticias de la Orquesta Titanic</h3>
+          <p class="bold">Para más detalles, click al foto</p>
+        </li>
+        <li><a href="#albertTitanicNoticias"  > 
+		<img src="titanic/titanicNoticias/fotosNoticias/albertTitanic.jpg"/> 
+          <h3>Albert Andrés, se une a la tripulación!</h3>
+          </a> </li>
+        <li><a href="#montseTitanicNoticias" > 
+		<img src="titanic/titanicNoticias/fotosNoticias/montseTitanic.jpg" /> 
+          <h3>MONTSE BRICEÑO, se incorpora al barco!</h3>
+          </a> </li>
+        <li><a href="#redTitanicNoticias" > 
+		<img src="titanic/titanicNoticias/fotosNoticias/redesTitanic.jpg" /> 
+          <h3>LA ORQUESTA TITANIC EN LAS REDES SOCIALES!</h3>
+          </a> </li>
+        <li> 
+          <img src="titanic/titanicNoticias/fotosNoticias/icon.png" /> 
+        </li>
+      </ul>
+    </div>
+    <!--flexslider-->
+   </div><!--content-->
+   
+   <div data-role="footer">
+   <div data-role="navbar">
+       <ul>
+         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		 target="_blank">PC site</a></li>
+         <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
+         <li><a href="#contacto" data-icon="star" data-transition="slideup">Contacto</a></li>
+       </ul>
+    </div><!--navbar-->
+       <h4><a href="tel:962956060">96 295 6060</a></h4>
+   </div><!--footer-->
+ 
+ </div><!--page-->
+<!--EndTitanicNoticias-->
+
+<!--////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--albertNoticia-->
+<div data-role="page" id="albertTitanicNoticias" data-add-back-btn="true" >
+
+    <div data-role="header" data-position="fixed">
+	
+     <h1>Albert Andrés</h1>
+    </div>
+
+   <div data-role="content">
+   
+     <img src="titanic/titanicNoticias/fotosNoticias/albertTitanic.jpg" />
+	  <p>Publicado el 02/11/2012 en Titanic</p>
+      <h3>Albert Andrés, se une a la tripulación!</h3>
+      <p>La Gira 2012 aún no ha terminado, mañana sábado 3 de Noviembre estaremos en COCENTAINA, en 
+	  la Fira de TOTS SANTS, pero nuestro barco empieza a preparar su tripulación de abordo con 
+	  figuras de primer nivel. Se une a nosotros ALBERT ANDRÉS a las voces! </p>
+     
+
+   </div><!--contenido-->
+
+   <div data-role="footer">
+     <div data-role="navbar">
+       <ul>
+         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		 target="_blank">PC</a></li>
+         <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
+         <li><a href="#contacto" data-icon="star" data-transition="slideup">Contacto</a></li>
+       </ul>
+     </div>
+     <h4><a href="tel:962956060">96 295 6060</a></h4>
+   </div><!--footer-->
+
+ </div><!--page-->
+<!--///////endAlbertNoticia///////-->
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--///////montseNoticia///////-->
+<div data-role="page" id="montseTitanicNoticias" data-add-back-btn="true">
+
+    <div data-role="header" data-position="fixed">
+     <h1>Montse Briceño</h1>
+    </div>
+
+   <div data-role="content">
+     <img src="titanic/titanicNoticias/fotosNoticias/montseTitanic.jpg" />
+	  <p>Publicado el 03/05/2012 en Titanic</p>
+      <h3>MONTSE BRICEÑO, se incorpora al barco!</h3>
+      <p>La familía del Titanic lejos de naufragar como sus tripulantes hace 100 años, arranca motores 
+	  con una nueva incorporación a la sección de voces, MONTSE BRICEÑO, cantante y flautista curtida 
+	  en mil batallas encima de los escenarios, seguro dará mucho que hablar….. Os lo vais a perder? <br/>
+	  Comprad ya vuestro billete para zarpar este mismo sábado en Senija, el TITANIC sigue su rumbo 
+	  A TODO GAS!!!</p>
+   </div><!--contenido-->
+
+   <div data-role="footer">
+     <div data-role="navbar">
+       <ul>
+         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		 target="_blank">PC</a></li>
+         <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
+         <li><a href="#contacto" data-icon="star" data-transition="slideup">Contacto</a></li>
+       </ul>
+     </div>
+     <h4><a href="tel:962956060">96 295 6060</a></h4>
+   </div><!--footer-->
+
+ </div><!--page-->
+<!--///////endMontseNoticia///////-->
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--///////redesNoticia///////-->
+<div data-role="page" id="redTitanicNoticias" data-add-back-btn="true">
+
+    <div data-role="header" data-position="fixed">
+     <h1>RSS TITANIC</h1>
+    </div>
+
+   <div data-role="content">
+     <img src="titanic/titanicNoticias/fotosNoticias/redesTitanic.jpg" />
+    <p>Publicado el 19/02/2012 en Titanic</p>
+    <h3>LA ORQUESTA TITANIC EN LAS REDES SOCIALES!</h3>
+    <p>No te quedes sin viajar con nosotros en este nuevo TOUR 2012 que acaba de empezar en nuestra 
+	primera parada, CARNAVAL DE MURO, cargados de novedades y sorpresas que te harán disfrutar de 
+	nuestro espectáculo. Síguenos ahora también en TUENTI, y como no en nuestros canales abiertos 
+	FACEBOOK Y TWITTER.
+   </div><!--contenido-->
+
+   <div data-role="footer">
+     <div data-role="navbar">
+       <ul>
+         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		 target="_blank">PC</a></li>
+         <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
+         <li><a href="#contacto" data-icon="star" data-transition="slideup">Contacto</a></li>
+       </ul>
+     </div>
+     <h4><a href="tel:962956060">96 295 6060</a></h4>
+   </div><!--footer-->
+
+ </div><!--page-->
+<!--///////endRedesNoticia///////-->
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--titanicActuaciones-->
+ <div data-role="page" id="titanicActuaciones" data-add-back-btn="true">
+
+   <div data-role="header" data-position="fixed">
+     <h1>Actuaciones 2012</h1>
+   </div>
+
+    <div data-role="content">
+  <div data-role="collapsible-set" data-theme="b">
+
+<div data-role="collapsible" data-collapsed="false">
+<h3>Enero</h3>
+<table width="100%" border="1">
+      <tr> 
+        <th><p><strong>Dia</strong></p></th>
+        <th><p><strong>Grupo</strong></p></th>
+        <th><p><strong>Lugar</strong></p></th>
+        <th><p><strong>Mapa</strong></p></th>
+        <th><p><strong>Horario</strong></p></th>
+        <th><p><strong>ETC</strong></p></th>
+      </tr>
+      <tr> 
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+        <td><p></p></td>
+      </tr>
+    </table>
+</div>
+
+<div data-role="collapsible">
+<h3>Febrero</h3>
+<table width="100%" border="1">
+      <tr> 
+        <th><p><strong>Dia</strong></p></th>
+        <th><p><strong>Grupo</strong></p></th>
+        <th><p><strong>Lugar</strong></p></th>
+        <th><p><strong>Mapa</strong></p></th>
+        <th><p><strong>Horario</strong></p></th>
+        <th><p><strong>ETC</strong></p></th>
+      </tr>
+      <tr> 
+        <td><p>18</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Muro del Alcoy (A)</p></td>
+        <td class="mapas" ><a href="#actuacionMap" > 
+          <p>Mapas</p>
+		  <p class="boloLat">38.781794</p>
+		  <p class="boloLng">-0.431226</p>
+		  <p class="boloName">Muro del Alcoy</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p>Carpa</p></td>
+      </tr>
+      <tr> 
+        <td><p>25</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Rotova</p></td>
+        <td class="mapas" ><a href="#actuacionMap"> 
+		  <p>Mapas</p>
+		  <p class="boloLat">38.932601</p>
+		  <p class="boloLng">-0.256987</p>
+		  <p class="boloName">Rotova</p>
+          
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p>Carpa</p></td>
+      </tr>
+    </table>
+</div>
+
+<div data-role="collapsible">
+<h3>Marzo</h3>
+<table width="100%" border="1">
+      <tr> 
+        <th><p><strong>Dia</strong></p></th>
+        <th><p><strong>Grupo</strong></p></th>
+        <th><p><strong>Lugar</strong></p></th>
+        <th><p><strong>Mapa</strong></p></th>
+        <th><p><strong>Horario</strong></p></th>
+        <th><p><strong>ETC</strong></p></th>
+      </tr>
+      <tr> 
+        <td><p>3</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Alzira</p></td>
+        <td class="mapas" ><a href="#actuacionMap">
+		  <p>Mapas</p>
+		  <p class="boloLat">39.15159</p>
+		  <p class="boloLng">-0.440464</p>
+		  <p class="boloName">Alzira</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p>Sala Rex</p></td>
+      </tr>
+      <tr> 
+        <td><p>18</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Carcaixent</p></td>
+        <td class="mapas" ><a href="#actuacionMap">
+		  <p>Mapas</p>
+		  <p class="boloLat">39.121222</p>
+		  <p class="boloLng">-0.449682</p>
+		  <p class="boloName">Carcaixent</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p>Falla</p></td>
+      </tr>
+      <tr> 
+        <td><p>24</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Alcoy</p></td>
+        <td class="mapas" ><a href="#actuacionMap">
+		  <p>Mapas</p>
+		  <p class="boloLat">38.702009</p>
+		  <p class="boloLng">-0.477198</p>
+		  <p class="boloName">Alcoy</p>
+          </a></td>
+        <td><p>18:00-</p></td>
+        <td><p>Boda</p></td>
+      </tr>
+    </table>
+</div>
+
+<div data-role="collapsible">
+<h3>abril</h3>
+<table width="100%" border="1">
+      <tr> 
+        <th><p><strong>Dia</strong></p></th>
+        <th><p><strong>Grupo</strong></p></th>
+        <th><p><strong>Lugar</strong></p></th>
+        <th><p><strong>Mapa</strong></p></th>
+        <th><p><strong>Horario</strong></p></th>
+        <th><p><strong>ETC</strong></p></th>
+      </tr>
+      <tr> 
+        <td><p>8</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Tavernes</p></td>
+        <td class="mapas" ><a href="#actuacionMap"> 
+		  <p>Mapas</p>
+		  <p class="boloLat">39.071668</p>
+		  <p class="boloLng">-0.267715</p>
+		  <p class="boloName">Tavernes de Valldigna</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p>13</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Terrateig</p></td>
+        <td class="mapas" ><a href="#actuacionMap">
+		  <p>Mapas</p>
+		  <p class="boloLat">38.894635</p>
+		  <p class="boloLng">-0.320627</p>
+		  <p class="boloName">Terrateig</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p>14</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Benissa(A)</p></td>
+        <td class="mapas" ><a href="#actuacionMap"> 
+		  <p>Mapas</p>
+		  <p class="boloLat">38.716269</p>
+		  <p class="boloLng">0.053356</p>
+		  <p class="boloName">Benissa</p>
+          </a></td>
+        <td><p>00:30-</p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p>21</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>San Isidro(A)</p></td>
+        <td class="mapas" ><a href="#actuacionMap"> 
+		  <p>Mapas</p>
+		  <p class="boloLat">38.170196</p>
+		  <p class="boloLng">-0.840197</p>
+		  <p class="boloName">San Isidro (A)</p>
+          </a></td>
+        <td><p>00:00-</p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p>30</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Mostoles(M)</p></td>
+        <td class="mapas" ><a href="#actuacionMap">
+		  <p>Mapas</p>
+		  <p class="boloLat">40.322771</p>
+		  <p class="boloLng">-3.865741</p>
+		  <p class="boloName">Mostoles (M)</p>
+          </a></td>
+        <td><p></p></td>
+        <td><p>23:30-</p></td>
+      </tr>
+    </table>
+</div>
+
+<div data-role="collapsible">
+<h3>Mayo</h3>
+<table width="100%" border="1">
+      <tr> 
+        <th><p><strong>Dia</strong></p></th>
+        <th><p><strong>Grupo</strong></p></th>
+        <th><p><strong>Lugar</strong></p></th>
+        <th><p><strong>Mapa</strong></p></th>
+        <th><p><strong>Horario</strong></p></th>
+        <th><p><strong>ETC</strong></p></th>
+      </tr>
+      <tr> 
+        <td><p>5</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Senija(A)</p></td>
+        <td class="mapas" ><a href="#actuacionMap"> 
+          <p>Mapas</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p>12</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Orba(A)</p></td>
+        <td class="mapas" ><a href="#actuacionMap"> 
+          <p>Mapas</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p>13</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Mur del Alcoy(A)</p></td>
+        <td class="mapas" ><a href="#actuacionMap">
+          <p>Mapas</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p>19</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Planes(A)</p></td>
+        <td class="mapas" ><a href="#actuacionMap">
+          <p>Mapas</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p>Suspendido por accidente</p></td>
+      </tr>
+      <tr> 
+        <td><p>26</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Alcoy</p></td>
+        <td class="mapas" ><a href="#actuacionMap">
+          <p>Mapas</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p>Boda</p></td>
+      </tr>
+    </table>
+</div>
+
+<div data-role="collapsible">
+<h3>Junio</h3>
+<table width="100%" border="1">
+      <tr> 
+        <th><p><strong>Dia</strong></p></th>
+        <th><p><strong>Grupo</strong></p></th>
+        <th><p><strong>Lugar</strong></p></th>
+        <th><p><strong>Mapa</strong></p></th>
+        <th><p><strong>Horario</strong></p></th>
+        <th><p><strong>ETC</strong></p></th>
+      </tr>
+      <tr> 
+        <td><p>16</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Sanet i Negrals(A)</p></td>
+        <td class="mapas" ><a href="#actuacionMap"> 
+          <p>Mapas</p>
+          </a></td>
+        <td><p>00:30-</p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p>22</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Trillo(GU)</p></td>
+        <td class="mapas" ><a href="#actuacionMap"> 
+          <p>Mapas</p>
+          </a></td>
+        <td><p>00:00-</p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p>23</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Palmera</p></td>
+        <td class="mapas" ><a href="#actuacionMap">
+          <p>Mapas</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p></p></td>
+      </tr>
+      <tr> 
+        <td><p>24</p></td>
+        <td><p>Titanic</p></td>
+        <td><p>Siete Aguas</p></td>
+        <td class="mapas" ><a href="#actuacionMap">
+          <p>Mapas</p>
+          </a></td>
+        <td><p>01:00-</p></td>
+        <td><p></p></td>
+      </tr>
+    </table>
+</div>
+
+<div data-role="collapsible">
+<h3>Julio</h3>
+<p></p>
+</div>
+
+<div data-role="collapsible">
+<h3>Agosto</h3>
+<p></p>
+</div>
+
+<div data-role="collapsible">
+<h3>Septiembre</h3>
+<p></p>
+</div>
+
+<div data-role="collapsible">
+<h3>Octubre</h3>
+<p></p>
+</div>
+
+<div data-role="collapsible">
+<h3>Noviembre</h3>
+<p></p>
+</div>
+
+<div data-role="collapsible">
+<h3>Diciembre</h3>
+<p></p>
+</div>
+  
+    </div><!--collapsible-set-->
+  </div><!--content-->
+
+
+  <div data-role="footer">
+    <h4>&copy; 2012 Titanic Producciones</h4>
+  </div>
+  
+ </div><!--page-->
+<!--EndTitanicActuaciones-->
+
+<!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--actuacionMap-->
+<div data-role="page" id="actuacionMap" data-add-back-btn="true" >
+
+   <div data-role="header" data-position="fixed">
+     <h1></h1>
+   </div><!--header-->
+   <div data-role="content">
+   
+  <h2>Para asistir al bolo.</h2>
+	 
+<div class="text"> 
+  <div class="textFrom">
+  <p>Escribe tu ubicación y pulsa el botón "GO"</p>
+  <input name="text" type="text" id="from" value="De donde vienes?" />
+  <input type="button" value="GO" id="driveit" data-theme="b" data-inline="true"  data-mini="true"/>
+  </div>
+  <div class="GPSmap">
+  <p>O pulsa este botón para buscarte(GPS) y pulsa el botón "GO"</p>
+  <input type="button" value="Tu posici&oacute;n" id="currentPos" data-theme="c" data-inline="true" 
+  data-mini="true"/>
+  <input type="button" value="GO" id="driveitCurrent" data-theme="b" data-inline="true" data-mini="true"/>
+  </div>
+  <p class=boloDestino></p>
+  <!--nombre del pueblo-->
+  
+  Mode 
+  <select name="select" id="mode">
+    <option value="DRIVING">Coche</option>
+    <option value="WALKING">Andando </option>
+    <option value="BICYCLING">Bicicleta </option>
+  </select>
+  
+</div>
+	
+		<div id="map_area">
+			<div id="map_canvas"></div>   
+		    </div>
+		</div>
+      <div id="directions">
+	  </div>
+	
+  
+   </div><!--content-->
+  
+   </div><!--page-->
+<!--endActuacionMap-->   
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 <!--titanicFotos-->
  <div data-role="page" id="titanicFotos" data-add-back-btn="true">
 
-   <div data-role="header">
-     <h1>GalerÃ­a de fotos de portadas</h1>
+   <div data-role="header" data-position="fixed">
+     <h1>Galería de fotos de portadas</h1>
    </div>
 	
    <div data-role="content" >	
      <p>Portadas de actuaciones TITANIC</p>		
      <ul data-role="listview" data-inset="true">
-       <li><a href="#galeria1">2012</a></li> 
-       <li><a href="#galeria2">2011</a></li> 
+       <li><a href="#galeria1">Galería 1</a></li> 
+       <li><a href="#galeria2">Galería 2</a></li> 
      </ul> 
      <ul data-role="listview" data-inset="true">
        <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" target="_blank">
-			GalerÃ­a de fotos en la WEB de Titanic</a></li> 
-	   <li><a href="#fotosPanoramicas">Fotos panorÃ¡micas</a></li>
+			Galería de fotos en la WEB de Titanic</a></li> 
+	   <li><a href="#fotosPanoramicas">Fotos panorámicas</a></li>
      </ul> 
    </div><!--content-->
-
-   <div data-role="footer">
-     <h4>&copy; 2012 Titanic Producciones</h4>
-   </div>
-
- </div><!--page-->
+</div><!--page-->
+   
  <!--EndFotos-->
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 <!--galeria1-->
  <div data-role="page" id="galeria1" class="gallery-page" data-add-back-btn="true">
 
-   <div data-role="header">
-     <h1>2012</h1>
+   <div data-role="header" data-position="fixed">
+     <h1>Galería 1</h1>
    </div>
 
    <div data-role="content">	
      <ul class="gallery">	
-		    <li><a href="fotos/full/titanicPortada1.jpg" rel="external"><img src="fotos/thumb/titanicPortada1.jpg" alt="Image 001" /></a></li>
-			<li><a href="fotos/full/titanicPortada2.jpg" rel="external"><img src="fotos/thumb/titanicPortada2.jpg" alt="Image 002" /></a></li>
-			<li><a href="fotos/full/titanicPortada3.jpg" rel="external"><img src="fotos/thumb/titanicPortada3.jpg" alt="Image 003" /></a></li>
-			<li><a href="fotos/full/titanicPortada4.jpg" rel="external"><img src="fotos/thumb/titanicPortada4.jpg" alt="Image 004" /></a></li>
-			<li><a href="fotos/full/titanicPortada5.jpg" rel="external"><img src="fotos/thumb/titanicPortada5.jpg" alt="Image 005" /></a></li>
-			<li><a href="fotos/full/titanicPortada6.jpg" rel="external"><img src="fotos/thumb/titanicPortada6.jpg" alt="Image 006" /></a></li>
-			<li><a href="fotos/full/titanicPortada7.jpg" rel="external"><img src="fotos/thumb/titanicPortada7.jpg" alt="Image 007" /></a></li>
-			<li><a href="fotos/full/titanicPortada8.jpg" rel="external"><img src="fotos/thumb/titanicPortada8.jpg" alt="Image 008" /></a></li>
-			<li><a href="fotos/full/titanicPortada9.jpg" rel="external"><img src="fotos/thumb/titanicPortada9.jpg" alt="Image 009" /></a></li>
-			<li><a href="fotos/full/titanicPortada10.jpg" rel="external"><img src="fotos/thumb/titanicPortada10.jpg" alt="Image 010" /></a></li>
-			<li><a href="fotos/full/titanicPortada11.jpg" rel="external"><img src="fotos/thumb/titanicPortada11.jpg" alt="Image 011" /></a></li>
-			<li><a href="fotos/full/titanicPortada12.jpg" rel="external"><img src="fotos/thumb/titanicPortada12.jpg" alt="Image 012" /></a></li>
-			<li><a href="fotos/full/titanicPortada13.jpg" rel="external"><img src="fotos/thumb/titanicPortada13.jpg" alt="Image 013" /></a></li>
-			<li><a href="fotos/full/titanicPortada14.jpg" rel="external"><img src="fotos/thumb/titanicPortada14.jpg" alt="Image 014" /></a></li>
-			<li><a href="fotos/full/titanicPortada15.jpg" rel="external"><img src="fotos/thumb/titanicPortada15.jpg" alt="Image 015" /></a></li>
-			<li><a href="fotos/full/titanicPortada16.jpg" rel="external"><img src="fotos/thumb/titanicPortada16.jpg" alt="Image 016" /></a></li>
-			<li><a href="fotos/full/titanicPortada17.jpg" rel="external"><img src="fotos/thumb/titanicPortada17.jpg" alt="Image 017" /></a></li>
+		    <li><a href="titanic/titanicFotos/galeria1/full/titanicPortada1.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada1.jpg" alt="Image 001" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada2.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada2.jpg" alt="Image 002" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada3.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada3.jpg" alt="Image 003" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada4.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada4.jpg" alt="Image 004" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada5.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada5.jpg" alt="Image 005" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada6.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada6.jpg" alt="Image 006" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada7.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada7.jpg" alt="Image 007" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada8.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada8.jpg" alt="Image 008" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada9.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada9.jpg" alt="Image 009" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada10.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada10.jpg" alt="Image 010" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada11.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada11.jpg" alt="Image 011" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada12.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada12.jpg" alt="Image 012" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada13.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada13.jpg" alt="Image 013" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada14.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada14.jpg" alt="Image 014" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada15.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada15.jpg" alt="Image 015" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada16.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada16.jpg" alt="Image 016" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria1/full/titanicPortada17.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria1/thumb/titanicPortada17.jpg" alt="Image 017" /></a></li>
      </ul>
 		
    </div><!--content-->
 	
    <div data-role="footer">
-		
+     <h4>&copy; 2012 Titanic Producciones</h4>
    </div>
 	
  </div><!--page-->
-<!--EndGaleria1-->
-
-<!--galeria2-->
+ <!--endGaleria1-->
+ 
+ <!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 
+<!--galeria2--> 
  <div data-role="page" id="galeria2" class="gallery-page" data-add-back-btn="true">
 
-   <div data-role="header">
+   <div data-role="header" data-position="fixed">
      <h1>2011</h1>
    </div>
 
    <div data-role="content">	
      <ul class="gallery">		
-			<li><a href="fotos/full/titanicPortada18.jpg" rel="external"><img src="fotos/thumb/titanicPortada18.jpg" alt="Image 018" /></a></li>
-			<li><a href="fotos/full/titanicPortada19.jpg" rel="external"><img src="fotos/thumb/titanicPortada19.jpg" alt="Image 019" /></a></li>
-			<li><a href="fotos/full/titanicPortada20.jpg" rel="external"><img src="fotos/thumb/titanicPortada20.jpg" alt="Image 020" /></a></li>
-			<li><a href="fotos/full/titanicPortada21.jpg" rel="external"><img src="fotos/thumb/titanicPortada21.jpg" alt="Image 021" /></a></li>
-			<li><a href="fotos/full/titanicPortada22.jpg" rel="external"><img src="fotos/thumb/titanicPortada22.jpg" alt="Image 022" /></a></li>
-			<li><a href="fotos/full/titanicPortada23.jpg" rel="external"><img src="fotos/thumb/titanicPortada23.jpg" alt="Image 023" /></a></li>
-			<li><a href="fotos/full/titanicPortada24.jpg" rel="external"><img src="fotos/thumb/titanicPortada24.jpg" alt="Image 024" /></a></li>
-			<li><a href="fotos/full/titanicPortada25.jpg" rel="external"><img src="fotos/thumb/titanicPortada25.jpg" alt="Image 025" /></a></li>
-			<li><a href="fotos/full/titanicPortada26.jpg" rel="external"><img src="fotos/thumb/titanicPortada26.jpg" alt="Image 026" /></a></li>
-		    <li><a href="fotos/full/titanicPortada27.jpg" rel="external"><img src="fotos/thumb/titanicPortada27.jpg" alt="Image 027" /></a></li>
-			<li><a href="fotos/full/titanicPortada28.jpg" rel="external"><img src="fotos/thumb/titanicPortada28.jpg" alt="Image 028" /></a></li>
-			<li><a href="fotos/full/titanicPortada29.jpg" rel="external"><img src="fotos/thumb/titanicPortada29.jpg" alt="Image 029" /></a></li>
-			<li><a href="fotos/full/titanicPortada30.jpg" rel="external"><img src="fotos/thumb/titanicPortada30.jpg" alt="Image 030" /></a></li>
-			<li><a href="fotos/full/titanicPortada31.jpg" rel="external"><img src="fotos/thumb/titanicPortada31.jpg" alt="Image 031" /></a></li>
-			<li><a href="fotos/full/titanicPortada32.jpg" rel="external"><img src="fotos/thumb/titanicPortada32.jpg" alt="Image 032" /></a></li>
-			<li><a href="fotos/full/titanicPortada33.jpg" rel="external"><img src="fotos/thumb/titanicPortada33.jpg" alt="Image 033" /></a></li>
-			<li><a href="fotos/full/titanicPortada34.jpg" rel="external"><img src="fotos/thumb/titanicPortada34.jpg" alt="Image 034" /></a></li>		
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada18.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada18.jpg" alt="Image 018" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada19.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada19.jpg" alt="Image 019" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada20.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada20.jpg" alt="Image 020" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada21.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada21.jpg" alt="Image 021" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada22.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada22.jpg" alt="Image 022" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada23.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada23.jpg" alt="Image 023" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada24.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada24.jpg" alt="Image 024" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada25.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada25.jpg" alt="Image 025" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada26.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada26.jpg" alt="Image 026" /></a></li>
+		    <li><a href="titanic/titanicFotos/galeria2/full/titanicPortada27.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada27.jpg" alt="Image 027" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada28.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada28.jpg" alt="Image 028" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada29.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada29.jpg" alt="Image 029" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada30.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada30.jpg" alt="Image 030" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada31.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada31.jpg" alt="Image 031" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada32.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada32.jpg" alt="Image 032" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada33.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada33.jpg" alt="Image 033" /></a></li>
+			<li><a href="titanic/titanicFotos/galeria2/full/titanicPortada34.jpg" rel="external">
+			<img src="titanic/titanicFotos/galeria2/thumb/titanicPortada34.jpg" alt="Image 034" /></a></li>		
      </ul>
    </div><!--content-->
 
@@ -406,7 +1163,9 @@ playSlide();
    </div>
 
  </div><!--page-->
-<!--EndGaleria2-->
+<!--endGaleria2-->
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 <!--fotospanoramicas-->
 <div data-role="page" id="fotosPanoramicas" data-add-back-btn="true">
@@ -423,27 +1182,22 @@ playSlide();
     </div>
   </div><!--content-->
    <div data-role="footer">
-   <div data-role="navbar">
-       <ul>
-         <li><a href="http://www." data-icon="arrow-u" target="_blank">PC site</a></li>
-         <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
-         <li><a href="#contacto" data-icon="star" data-transition="pop">Contacto</a></li>
-       </ul>
-    </div><!--navbar-->
-       <h4><a href="tel:962956060">96 295 6060</a></h4>
-   </div><!--footer-->
+     <h4>&copy; 2012 Titanic Producciones</h4>
+   </div>
  
 </div><!--page-->
 <!--endfotosPanoramicas-->
 
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+
 <!--titanicVideos-->
  <div data-role="page" id="titanicVideos" data-add-back-btn="true">
-   <div data-role="header">
+   <div data-role="header" data-position="fixed">
      <h1>2012</h1>
    </div>
 
    <div data-role="content">	
-     <div class="youtube"><h2>Ãšltimos videos de YouTube</h2>
+     <div class="youtube"><h2>Últimos videos de YouTube</h2>
 	 <iframe width="294" height="220" 
 	 src="http://www.youtube.com/embed/0F8i6qh2qUY" frameborder="0" allowfullscreen></iframe>
 	 </div>
@@ -451,42 +1205,42 @@ playSlide();
 	<ul data-role="listview">
 				<li data-role="list-divider">2008</li>
 			<li><a href="http://www.youtube.com/watch?v=0F8i6qh2qUY&feature=plcp">
-				<img src="thumbnails/intro.jpg" />
+				<img src="titanic/titanicVideo/thumb/intro.jpg" />
 				<h3>Intro & callme</h3>
-				<p>GrabaciÃ³n DVD.......blablablablabal<br/>
+				<p>Grabación DVD.......blablablablabal<br/>
 				blablablablablablablalblaba</p>
 			</a></li>
 			<li><a href="http://www.youtube.com/watch?v=PwWOKLid6-c&feature=plcp">
-				<img src="thumbnails/chambao.jpg" />
+				<img src="titanic/titanicVideo/thumb/chambao.jpg" />
 				<h3>Chambao</h3>
-				<p>GrabaciÃ³n DVD.......blablablablabal<br/>
+				<p>Grabación DVD.......blablablablabal<br/>
 				blablablablablablablalblaba</p>
 			</a></li>
 			<li data-role="list-divider">2009</li>
 			<li><a href="http://www.youtube.com/watch?v=KoTj6rfOI4g&feature=plcp">
-				<img src="thumbnails/insurreccion.jpg" />
-				<h3>InsurrecciÃ³n</h3>
-				<p>GrabaciÃ³n DVD.......blablablablabal<br/>
+				<img src="titanic/titanicVideo/thumb/insurreccion.jpg" />
+				<h3>Insurrección</h3>
+				<p>Grabación DVD.......blablablablabal<br/>
 				blablablablablablablalblaba</p>
 			</a></li>
 			<li data-role="list-divider">2010</li>
 			<li><a href="http://www.youtube.com/watch?v=V-uru5NLUAI&feature=plcp">
-				<img src="thumbnails/mixPromo.jpg" />
+				<img src="titanic/titanicVideo/thumb/mixPromo.jpg" />
 				<h3>Mix promo</h3>
-				<p>GrabaciÃ³n DVD.......blablablablabal<br/>
+				<p>Grabación DVD.......blablablablabal<br/>
 				blablablablablablablalblaba</p>
 			</a></li>
 			<li><a href="http://www.youtube.com/watch?v=K0xtoBxz7TI&feature=plcp">
-				<img src="thumbnails/noticia1.jpg" />
+				<img src="titanic/titanicVideo/thumb/noticia1.jpg" />
 				<h3>Noticia 1</h3>
-				<p>GrabaciÃ³n DVD.......blablablablabal<br/>
+				<p>Grabación DVD.......blablablablabal<br/>
 				blablablablablablablalblaba</p>
 			</a></li>
 			<li data-role="list-divider">2011</li>
 			<li><a href="http://www.youtube.com/watch?v=w29_mGg_nz0&feature=plcp">
-				<img src="thumbnails/noticia2.jpg" />
+				<img src="titanic/titanicVideo/thumb/noticia2.jpg" />
 				<h3>Noticia 2</h3>
-				<p>GrabaciÃ³n DVD.......blablablablabal<br/>
+				<p>Grabación DVD.......blablablablabal<br/>
 				blablablablablablablalblaba</p>
 			</a></li>
 			<li data-role="list-divider">2012</li>
@@ -501,166 +1255,12 @@ playSlide();
 </div><!--page-->
 <!--EndTitanicVideos-->
 
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////-->
 
+<!--tabarca-->
+<div data-role="page" id="tabarca" data-add-back-btn="true">
 
-	
-
- 
-
-        
-   
-   
-
-
-<!--titanicNoticias-->
- <div data-role="page" id="titanicNoticias" data-add-back-btn="true">
- 
-   <div data-role="header">
-     <h1>Ãšltimas noticias</h1>
-   </div>
- 
-   <div data-role="content">
-   
-        
-    <div class="flexslider"> 
-      <ul class="slides">
-        <li> 
-          <h3>Ãšltimas noticias de la Orquesta Titanic</h3>
-          <p class="bold">Para mÃ¡s detalles, click al foto</p>
-        </li>
-        <li><a href="#albertTitanicNoticias"  > <img src="fotos/noticias/albertTitanic.jpg"/> 
-          <h3>Albert AndrÃ©s, se une a la tripulaciÃ³n!</h3>
-          </a> </li>
-        <li><a href="#montseTitanicNoticias" > <img src="fotos/noticias/montseTitanic.jpg" /> 
-          <h3>MONTSE BRICEÃ‘O, se incorpora al barco!</h3>
-          </a> </li>
-        <li><a href="#redTitanicNoticias" > <img src="fotos/noticias/redesTitanic.jpg" /> 
-          <h3>LA ORQUESTA TITANIC EN LAS REDES SOCIALES!</h3>
-          </a> </li>
-        <li> 
-          <h3>D.C</h3>
-        </li>
-      </ul>
-    </div>
-    <!--flexslider-->
-   </div><!--content-->
-   
-   <div data-role="footer">
-   <div data-role="navbar">
-       <ul>
-         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" target="_blank">PC site</a></li>
-         <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
-         <li><a href="#contacto" data-icon="star" data-transition="pop">Contacto</a></li>
-       </ul>
-    </div><!--navbar-->
-       <h4><a href="tel:962956060">96 295 6060</a></h4>
-   </div><!--footer-->
- 
- </div><!--page-->
-<!--EndTitanicNoticias-->
-
-<!--albert-->
-<div data-role="page" id="albertTitanicNoticias" data-add-back-btn="true" >
-
-    <div data-role="header">
-	
-     <h1>Albert AndrÃ©s</h1>
-    </div>
-
-   <div data-role="content">
-   
-     <img src="fotos/noticias/albertTitanic.jpg" />
-	  <p>Publicado el 02/11/2012 en Titanic</p>
-      <h3>Albert AndrÃ©s, se une a la tripulaciÃ³n!</h3>
-      <p>La Gira 2012 aÃºn no ha terminado, maÃ±ana sÃ¡bado 3 de Noviembre estaremos en COCENTAINA, en 
-	  la Fira de TOTS SANTS, pero nuestro barco empieza a preparar su tripulaciÃ³n de abordo con 
-	  figuras de primer nivel. Se une a nosotros ALBERT ANDRÃ‰S a las voces! </p>
-     
-
-   </div><!--contenido-->
-
-   <div data-role="footer">
-     <div data-role="navbar">
-       <ul>
-         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" target="_blank">PC</a></li>
-         <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
-         <li><a href="#contacto" data-icon="star" data-transition="pop">Contacto</a></li>
-       </ul>
-     </div>
-     <h4><a href="tel:962956060">96 295 6060</a></h4>
-   </div><!--footer-->
-
- </div><!--page-->
-<!--///////albert///////-->
-
-<!--///////montse///////-->
-<div data-role="page" id="montseTitanicNoticias" data-add-back-btn="true">
-
-    <div data-role="header">
-     <h1>Montse BriceÃ±o</h1>
-    </div>
-
-   <div data-role="content">
-     <img src="fotos/noticias/montseTitanic.jpg" />
-	  <p>Publicado el 03/05/2012 en Titanic</p>
-      <h3>MONTSE BRICEÃ‘O, se incorpora al barco!</h3>
-      <p>La familÃ­a del Titanic lejos de naufragar como sus tripulantes hace 100 aÃ±os, arranca motores 
-	  con una nueva incorporaciÃ³n a la secciÃ³n de voces, MONTSE BRICEÃ‘O, cantante y flautista curtida 
-	  en mil batallas encima de los escenarios, seguro darÃ¡ mucho que hablarâ€¦.. Os lo vais a perder? <br/>
-	  Comprad ya vuestro billete para zarpar este mismo sÃ¡bado en Senija, el TITANIC sigue su rumbo 
-	  A TODO GAS!!!</p>
-   </div><!--contenido-->
-
-   <div data-role="footer">
-     <div data-role="navbar">
-       <ul>
-         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" target="_blank">PC</a></li>
-         <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
-         <li><a href="#contacto" data-icon="star" data-transition="pop">Contacto</a></li>
-       </ul>
-     </div>
-     <h4><a href="tel:962956060">96 295 6060</a></h4>
-   </div><!--footer-->
-
- </div><!--page-->
-<!--///////montse///////-->
-
-<!--///////redes///////-->
-<div data-role="page" id="redTitanicNoticias" data-add-back-btn="true">
-
-    <div data-role="header">
-     <h1>RSS TITANIC</h1>
-    </div>
-
-   <div data-role="content">
-     <img src="fotos/noticias/redesTitanic.jpg" />
-    <p>Publicado el 19/02/2012 en Titanic</p>
-    <h3>LA ORQUESTA TITANIC EN LAS REDES SOCIALES!</h3>
-    <p>No te quedes sin viajar con nosotros en este nuevo TOUR 2012 que acaba de empezar en nuestra 
-	primera parada, CARNAVAL DE MURO, cargados de novedades y sorpresas que te harÃ¡n disfrutar de 
-	nuestro espectÃ¡culo. SÃ­guenos ahora tambiÃ©n en TUENTI, y como no en nuestros canales abiertos 
-	FACEBOOK Y TWITTER.
-   </div><!--contenido-->
-
-   <div data-role="footer">
-     <div data-role="navbar">
-       <ul>
-         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" target="_blank">PC</a></li>
-         <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
-         <li><a href="#contacto" data-icon="star" data-transition="pop">Contacto</a></li>
-       </ul>
-     </div>
-     <h4><a href="tel:962956060">96 295 6060</a></h4>
-   </div><!--footer-->
-
- </div><!--page-->
-<!--///////redes///////-->
-
-<!--//////tabarca///////-->
- 
- <div data-role="page" id="tabarca" data-add-back-btn="true">
-
-   <div data-role="header">
+   <div data-role="header" data-position="fixed">
      <h1>Orquesta Tabarca</h1>
    </div>
 
@@ -671,11 +1271,12 @@ playSlide();
      <ul data-filter="true" data-role="listview" data-inset="true">
        <li data-role="list-divider">CONTENIDO</li>
          <a href="#tabarcaActuaciones" data-role="button" data-icon="arrow-r" data-iconpos="right">
-		 Actuaciones</a>
-         <a href="#tabarcaFotos" data-role="button" data-icon="arrow-r" data-iconpos="right">Fotos</a>
-         <a href="#tabarcaVideos" data-role="button" data-icon="arrow-r" data-iconpos="right">Videos</a>
-         <a href="#tabarcaLinks" data-role="button" data-icon="arrow-r" data-iconpos="right">Links</a>
-         <a href="#tabarcaNoticias" data-role="button" data-icon="arrow-r" data-iconpos="right">Noticias</a>
+		 Componentes</a>
+         <a href="#tabarcaFotos" data-role="button" data-icon="arrow-r" data-iconpos="right">Noticias</a>
+         <a href="#tabarcaVideos" data-role="button" data-icon="arrow-r" data-iconpos="right">Actuaciones</a>
+         <a href="#tabarcaLinks" data-role="button" data-icon="arrow-r" data-iconpos="right">Fotos</a>
+         <a href="#tabarcaNoticias" data-role="button" data-icon="arrow-r" data-iconpos="right">
+		 Videos</a>
      </ul>
 
    </div><!--contenido-->
@@ -683,9 +1284,10 @@ playSlide();
    <div data-role="footer">
      <div data-role="navbar">
        <ul>
-         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" target="_blank">PC</a></li>
+         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		 target="_blank">PC</a></li>
          <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
-         <li><a href="#contacto" data-icon="star" data-transition="pop">Contacto</a></li>
+         <li><a href="#contacto" data-icon="star" data-transition="slideup">Contacto</a></li>
        </ul>
      </div>
      <h4><a href="tel:962956060">96 295 6060</a></h4>
@@ -694,10 +1296,12 @@ playSlide();
  </div><!--page-->
 <!--///////endTabarca///////-->
 
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+
 <!--///////otras///////-->
  <div data-role="page" id="otras" data-add-back-btn="true">
 
-   <div data-role="header">
+   <div data-role="header" data-position="fixed">
      <h1>Otros productos</h1>
    </div>
 
@@ -706,9 +1310,9 @@ playSlide();
      <div class="ui-grid-b">
        <div class="ui-block-a"><div class=" ui-bar ui-bar-c">Otras orquestas</div></div>
        <div class="ui-block-b"><div class=" ui-bar ui-bar-c">Acrobat</div></div>
-       <div class="ui-block-c"><div class=" ui-bar ui-bar-c">ComedÃ­a</div></div>
+       <div class="ui-block-c"><div class=" ui-bar ui-bar-c">Comedía</div></div>
        <div class="ui-block-a"><div class=" ui-bar ui-bar-c">Magias</div></div>
-       <div class="ui-block-b"><div class=" ui-bar ui-bar-c">Disco mÃ³vil</div></div>
+       <div class="ui-block-b"><div class=" ui-bar ui-bar-c">Disco móvil</div></div>
        <div class="ui-block-c"><div class=" ui-bar ui-bar-c">Presentaciones</div></div>
      </div><!--ui-grid-b-->
    </div><!--content-->
@@ -716,9 +1320,10 @@ playSlide();
    <div data-role="footer">
      <div data-role="navbar">
        <ul>
-         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" target="_blank">PC site</a></li>
+         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		 target="_blank">PC site</a></li>
          <li><a href="#empresa" data-icon="info" data-transition="slideup">empresa</a></li>
-         <li><a href="#contacto" data-icon="star" data-transition="pop">contacto</a></li>
+         <li><a href="#contacto" data-icon="star" data-transition="slideup">contacto</a></li>
        </ul>
      </div><!--navbar-->
      <h4><a href="tel:962956060">96 295 6060</a></h4>
@@ -727,9 +1332,11 @@ playSlide();
  </div><!--page-->
 <!--///////EndOtras///////-->
 
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+
 <!--///////links///////-->
  <div data-role="page" id="links" data-add-back-btn="true">
-  <div data-role="header">
+  <div data-role="header" data-position="fixed">
      <h1>Links-TITANIC Producciones</h1>
    </div>
  
@@ -742,17 +1349,17 @@ playSlide();
 	<ul data-role="listview" data-inset="true" data-filter="true">
        <li data-role="list-divider">
 	   <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orquesta TITANIC</h3></li>
-         <li><img src="logos/titanic.jpg" class="ui-li-icon"/><a href="titanicproducciones.com" data-icon="arrow-u" "slideup" 
-		 target="_blank">
+         <li><img src="logos/titanic.jpg" class="ui-li-icon"/><a href="titanicproducciones.com" 
+		 data-icon="arrow-u" "slideup" target="_blank">
 		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home page</a></li>
-		 <li><img src="logos/facebook.jpg" class="ui-li-icon"/><a href="facebook.com" data-icon="arrow-u" "slideup" 
-		 target="_blank">
+		 <li><img src="logos/facebook.jpg" class="ui-li-icon"/><a href="facebook.com" data-icon="arrow-u" 
+		 "slideup" target="_blank">
 		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Facebook</a></li>
-		 <li><img src="logos/twitter.jpg" class="ui-li-icon"/><a href="facebook.com" data-icon="arrow-u" "slideup" 
-		 target="_blank">
+		 <li><img src="logos/twitter.jpg" class="ui-li-icon"/><a href="facebook.com" data-icon="arrow-u" 
+		 "slideup" target="_blank">
 		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Twitter</a></li>
-		 <li><img src="logos/tuenti.jpg" class="ui-li-icon"/><a href="facebook.com" data-icon="arrow-u" "slideup" 
-		 target="_blank">
+		 <li><img src="logos/tuenti.jpg" class="ui-li-icon"/><a href="facebook.com" data-icon="arrow-u" 
+		 "slideup" target="_blank">
 		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tuenti</a></li>
 	</ul>
 </div>
@@ -762,7 +1369,7 @@ playSlide();
 	<ul data-role="listview" data-inset="true" data-filter="true">
        <li data-role="list-divider">
 	   <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orquesta TABARCA</h3></li>
-         <li><a href="#" data-icon="arrow-u" "slideup" target="_blank">
+         <li><a href="#" data-icon="arrow-u" target="_blank">
 		 No</a></li>
 	</ul>
 </div>
@@ -774,11 +1381,11 @@ playSlide();
 	<ul data-role="listview" data-inset="true" data-filter="true" >	   
        <li data-role="list-divider">
 	   <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foto,video poster..etc</h3></li>
-         <li><a href="http://www.masahiroaramaki.com" data-icon="arrow-u" "slideup" target="_blank">
+         <li><a href="#" data-icon="arrow-u" target="_blank">
 		 fotos</a></li>
-         <li><a href="#" data-icon="arrow-u" "slideup" target="_blank">
+         <li><a href="#" data-icon="arrow-u" target="_blank">
 		 alguien</a></li>
-         <li><a href="#" data-icon="arrow-u" "slideup" target="_blank">
+         <li><a href="#" data-icon="arrow-u"  target="_blank">
 		 mas?</a></li>
        </ul>
      </div>
@@ -788,9 +1395,10 @@ playSlide();
    <div data-role="footer">
    <div data-role="navbar">
        <ul>
-         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" target="_blank">PC site</a></li>
+         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		 target="_blank">PC site</a></li>
          <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
-         <li><a href="#contacto" data-icon="star" data-transition="pop">Contacto</a></li>
+         <li><a href="#contacto" data-icon="star" data-transition="slideup">Contacto</a></li>
        </ul>
     </div><!--navbar-->
        <h4><a href="tel:962956060">96 295 6060</a></h4>
@@ -799,10 +1407,12 @@ playSlide();
  </div><!--page-->
 <!--EndLinks-->
 
+<!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
 <!--///////etc///////-->
  <div data-role="page" id="etc" data-add-back-btn="true">
 
-   <div data-role="header">
+   <div data-role="header" data-position="fixed">
      <h1>ETC</h1>
    </div>
 
@@ -813,9 +1423,10 @@ playSlide();
    <div data-role="footer">
      <div data-role="navbar">
        <ul>
-         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" target="_blank">PC site</a></li>
+         <li><a href="http://www.titanicproducciones.com/orquesta_titanic.html" data-icon="arrow-u" 
+		 target="_blank">PC site</a></li>
          <li><a href="#empresa" data-icon="info" data-transition="slideup">Empresa</a></li>
-         <li><a href="#contacto" data-icon="star" data-transition="pop">Contacto</a></li>
+         <li><a href="#contacto" data-icon="star" data-transition="slideup">Contacto</a></li>
        </ul>
      </div><!--navbar-->
        <h4><a href="tel:962956060">96 295 6060</a></h4>
@@ -824,41 +1435,44 @@ playSlide();
  </div><!--page-->
 <!--///////EndEtc///////-->
 
+<!--///////////////////////////////////////////////////////////////////////////////////////////////-->
+
 <!--///////empresa///////-->
  <div data-role="page" id="empresa" data-add-back-btn="true">
 
-   <div data-role="header">
+   <div data-role="header" data-position="fixed">
      <h1>La empresa</h1>
    </div>
 
    <div data-role="content">
-     <p class="bold">Por definiciÃ³n, esta, es una empresa joven, dinÃ¡mica, pero con una experiencia contrastable. 
+     <p class="bold">Por definición, esta, es una empresa joven, dinámica, pero con una experiencia 
+	 contrastable. 
 	 Ofrecemos todos los servicios para cualquier tipo de evento, con una disponibilidad en propiedad 
 	 de sillas, mesas, escenarios, gradas, payasos, hinchables, etc.<br/>
-     Nuestra especialidad son las orquestas; para ello contamos con las mÃ¡s apetecibles dentro del sector. 
-     Prueba de ello es como va creciendo la contrataciÃ³n aÃ±o tras aÃ±o, dentro de nuestra empresa, por el 
+     Nuestra especialidad son las orquestas; para ello contamos con las más apetecibles dentro del sector. 
+     Prueba de ello es como va creciendo la contratación año tras año, dentro de nuestra empresa, por el 
      esfuerzo de nuestro departamento comercial.<br/>
      La ORQUESTA TITANIC es la que marca la pauta y va creciendo en paralelo con nuestra propia empresa; 
      al igual que LA ORQUESTA TABARCA.<br/>
-     Para cualquier consulta, evento, contrataciÃ³n, etc, no dude en contactar con nosotros por medio de 
-     nuestra pÃ¡gina web o utilizando nuestras lÃ­neas telefÃ³nicas.<br/>
+     Para cualquier consulta, evento, contratación, etc, no dude en contactar con nosotros por medio de 
+     nuestra página web o utilizando nuestras líneas telefónicas.<br/>
      Gracias.
      </p>
-     <h2 class="bold">Empresa:</h4>
-     <p class="bold">Titanic producciones S.L</p>
-     <h2 class="bold">Establecido:</h4>
-     <p class="bold">2001/1-Enero</p>
-     <h2 class="bold">Empreados:</h4>
-     <p class="bold">50</p>
-     <h2 class="bold">DirecciÃ³n de la oficina TITANIC Pro.:</h4>
-     <p class="bold">CP:46725<br>
-     Avd. Les Eres nÂº 14 Nave 2<br/>
-     PolÃ­gono Industrial Les Mases<br/>
+     <h2 class="bold-azul">Empresa:</h2>
+     <p class="bold-centro">Titanic producciones S.L</p>
+     <h2 class="bold-azul">Establecido:</h2>
+     <p class="bold-centro">2001/1-Enero</p>
+     <h2 class="bold-azul">Empreados:</h2>
+     <p class="bold-centro">50</p>
+     <h2 class="bold-azul">Dirección de la oficina TITANIC Pro.:</h2>
+     <p class="bold-centro">CP:46725<br>
+     Avd. Les Eres nº 14 Nave 2<br/>
+     Polígono Industrial Les Mases<br/>
      Rotova (Valencia)</p>
      <p class="bold">
-     Telï¼š 96 295 6060<br/>
+     Tel: 96 295 6060<br/>
      Movil: 628 108 150<br/>
-     Faxï¼š 00-000-0000</p>
+     Fax: 00-000-0000</p>
      <div id="map">
      </div>
 
@@ -870,6 +1484,8 @@ playSlide();
 
  </div><!--page-->
 <!--///////endEmpresa///////-->
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////-->
 
 <!--///////Contacto///////-->
  <div data-role="page" id="contacto" data-add-back-btn="true">
@@ -889,7 +1505,7 @@ playSlide();
    <label for="apellido">Apellido</label>
    <input type="text" id="apellido">
    
-   <label for="telefono">TelÃ©fono para contactar</label>
+   <label for="telefono">Teléfono para contactar</label>
    <input type="text" id="telefono">
    
    </div>
@@ -924,13 +1540,13 @@ playSlide();
    
    <div data-role="fieldcontain">
    <fieldset data-role="controlgroup">
-   <legend>Â¿Para cuando?</legend>
+   <legend>¿Para cuando?</legend>
    <input type="radio" name="choice" id="choice1" value="Menos de 3 meses" checked="checked" />
    <label for="choice1">Menos de 3 mes</label>
    <input type="radio" name="choice" id="choice2" value="Mas de 3 meses" />
    <label for="choice2">Mas de 3 meses</label>
-   <input type="radio" name="choice" id="choice3" value="Mas de 1 aÃ±o" />
-   <label for="choice3">MÃ¡s de 1 aÃ±o</label>
+   <input type="radio" name="choice" id="choice3" value="Mas de 1 año" />
+   <label for="choice3">Más de 1 año</label>
    </fieldset>
    </div>
    <input type="button" value="Cancelar" data-icon="delete" data-inline="true">
@@ -945,7 +1561,6 @@ playSlide();
  </div><!--page-->
 <!--///////EndContanto///////-->
 
-
+<!--///////////////////////////////////////////////////////////////////////////////////////////////-->
 </body>
-
 </html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+<meta charset="UTF-8" />
+<title>Contacto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+<!--///////Contacto///////-->
+ <div data-role="page" id="contacto" data-add-back-btn="true">
+
+   <div data-role="header">
+     <h1>Contacto</h1>
+   </div>
+
+   <div data-role="content">
+   <form action="#" method="post">
+      
+   
+   <div data-role="fieldcontain">
+   <label for="name">Nombre</label>
+   <input type="text" id="nombre">
+   
+   <label for="apellido">Apellido</label>
+   <input type="text" id="apellido">
+   
+   <label for="telefono">Teléfono para contactar</label>
+   <input type="text" id="telefono">
+   
+   </div>
+   
+   <div data-role="fieldcontain">
+   <label for="orquesta">Orquesta</label>
+   <select name="contratar" id="contratar" data-role="slider">
+   <option value="titanic">Titanic</option>
+   <option value="tabarca">Tabarca</option>
+   </select>
+   </div>
+   
+   <div data-role="fieldcontain">
+   <fieldset data-role="controlgroup">
+   <legend>Tipo de contrato</legend>
+   
+   <input type="checkbox" name="type1" id="type1" value="Orquestas">
+   <label for="type1">Orquestas</label>
+   <input type="checkbox" name="type2" id="type2" value="Figuras">
+   <label for="type2">Figuras</label>
+   <input type="checkbox" name="type3" id="type3" value="Parque infantil">
+   <label for="type3">Parque infantil</label>
+   <input type="checkbox" name="type4" id="type4" value="Sillas y Mesas">
+   <label for="type4">Sillas y mesas etc...</label>
+   </fieldset>
+   </div>
+   
+   <div data-role="fieldcontain">
+   <label for="comment">Consultas</label>
+   <textarea id="comment"></textarea>
+   </div>
+   
+   <div data-role="fieldcontain">
+   <fieldset data-role="controlgroup">
+   <legend>¿Para cuando?</legend>
+   <input type="radio" name="choice" id="choice1" value="Menos de 3 meses" checked="checked" />
+   <label for="choice1">Menos de 3 mes</label>
+   <input type="radio" name="choice" id="choice2" value="Mas de 3 meses" />
+   <label for="choice2">Mas de 3 meses</label>
+   <input type="radio" name="choice" id="choice3" value="Mas de 1 año" />
+   <label for="choice????????½?e¨D3">Más de 1 año</label>
+   </fieldset>
+   </div>
+   <input type="button" value="Cancelar" data-icon="delete" data-inline="true">
+   <input type="submit" value="Enviar" data-icon="arrow-r" data-inline="true">
+   
+   </form>
+   </div>
+   <div data-role="footer">
+   <h4>&copy; 2012 Titanic Producciones</h4>
+   </div>
+
+ </div><!--page-->
+<!--///////EndContanto///////-->
+
+
+</body>
+</html>

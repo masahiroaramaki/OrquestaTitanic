@@ -36,9 +36,9 @@
 	overflow:hidden;
 	}
 #actuacionMap #directions{	 
-	margin:auto;		
+	margin:25px auto;		
 	width:80%;
-	height:200px;
+	height:300px;
 	overflow:auto;
 	background-color:#FFFF44;
 	border:1px red solid;		

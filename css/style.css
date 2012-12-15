@@ -19,25 +19,25 @@
   white-space: normal;
   }
   
-#perfil #cincoFotosAparecen{/*#perfil*/
+ #cincoFotosAparecen{/*#perfil*/
               width:260px;
 			  height:260px;
 			  position:relative;
 			  top: 20px;
 			  margin:auto;
 			  }
-#perfil div#cincoFotosAparecen img{/*#perfil*/
+ div#cincoFotosAparecen img{/*#perfil*/
              position:absolute;
 			 top:2px;
 			 left:15px;
              }
-#perfil div.botonReplay{/*#perfil*/
+ div.botonReplay{/*#perfil*/
           width:100px;
           position:relative;
 		  top:20px;
           margin:auto;
            }
-#perfil div.presentacion{/*#perfil*/
+ div.presentacion{/*#perfil*/
          width:200px;
          position:relative;
 		 top:30px;

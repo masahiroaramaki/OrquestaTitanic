@@ -23,9 +23,9 @@
 	width:250px;	
 	margin:20px auto;
 	}
-#actuacionMap p.boloLat,
-              p.boloLng,
-			  p.boloName{
+#titanicActuaciones p.boloLat,
+#titanicActuaciones p.boloLng,
+#titanicActuaciones p.boloName{
    display:none;
 }	
 #actuacionMap #map_area{

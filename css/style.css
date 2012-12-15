@@ -50,10 +50,11 @@
   font-weight: bold;
   }
 #empresa h2.bold-azul{/*empresa*/
+  text-align:center;
   margin:auto;
   font-weight:bold;
   color:blue;
-  background-color:yellow;
+  background-color:#FFFF99;
   } 
 #empresa p.bold-centro{/*empresa*/
   text-align:center;

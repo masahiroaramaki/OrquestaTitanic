@@ -1,0 +1,154 @@
+/*////////////////////////////////////////////general///////////////////////////////////////////*/
+@charset "iso-8859-1";
+* {
+  font-family:Helvetica,Arial,sans-serif;  
+  }
+ p{
+  font-size:1.1em;
+  }
+.wide {/*#home,#titanic Fotos*/
+  width: 100%;
+  }
+
+.ui-header .ui-title, 
+.ui-footer .ui-title,
+.ui-btn-inner,
+.ui-li-heading,
+.ui-li .ui-btn-text a.ui-link-inherit,
+.ui-li-desc {/* text entero (sin desaparecer), (name space)*/
+  overflow: visible;
+  white-space: normal;
+  }
+ .upBoton a.upScroll{/*Boton para subir a arriba*/
+       clear:both;
+       width:40%;
+       display:block;
+       margin:10px auto;
+	     }
+/*/////////////////////////////////////////cinco fotos-Perfil////////////////////////////////////////*/  
+ #cincoFotosAparecen{/*#perfil-donde aparecen fotos*/
+              width:260px;
+			  height:260px;
+			  position:relative;
+			  top: 20px;
+			  margin:auto;
+			  }
+ div#cincoFotosAparecen img{/*#perfil-setting 5 fotos*/
+             position:absolute;
+			 top:2px;
+			 left:15px;
+             }
+ div.botonReplay{/*#perfil-boton debajo de las 5 fotos*/
+          width:100px;
+          position:relative;
+		  top:20px;
+          margin:auto;
+           }
+ div.presentacion{/*#perfil-curriculum vitae*/
+         width:200px;
+         position:relative;
+		 top:30px;
+		 margin:auto;
+		 overflow:auto;
+          }
+/*/////////////////////////////////////////////Empresa/////////////////////////////////////////////////*/
+
+#empresa .bold {/*empresa-letra de la presentación*/
+  font-weight: bold;
+  }
+#empresa h2.bold-azul{/*empresa-Sections*/
+  text-align:center;
+  margin:auto;
+  font-weight:bold;
+  color:blue;
+  background-color:#FFFF99;
+  } 
+#empresa p.bold-centro{/*empresa-respuesta a sections*/
+  text-align:center;
+  }
+#empresa #map {/*#empresa-mapa*/
+  width: 100%;
+  height: 400px;
+  border: 8px solid #ccc;
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+/*//////////////////////////////////////////Contacto///////////////////////////////////////////////////*/
+#contacto textarea.ui-body-b,
+          input.ui-body-b {/*background-form #contacto*/
+           background-color: white;
+           }
+
+#contacto .ui-field-contain:first-child {/*text-form area espacio #contacto*/
+           padding-top: 0;
+          }
+
+/*////////////////////////////////////////titanicActuaciones////////////////////////////////////////////*/
+#titanicActuaciones p.boloLat,
+#titanicActuaciones p.boloLng,
+#titanicActuaciones p.boloName{
+   display:none;
+}
+#titanicActuaciones table{
+overflow:auto;
+}		 
+/*///////////////////////////////////////////actuacionMap/////////////////////////////////////////////*/
+#actuacionMap input[type='text'],
+#actuacionMapinput[type='button'],
+#actuacionMap select,
+#actuacionMap textarea {
+	       font-size:18px;
+		   }
+#actuacionMap input#from{
+   width:200px;
+}
+#actuacionMap .textFrom,
+              .GPSmap{
+  width:90%;
+  border:1px solid red;
+  margin:5px auto;
+  padding:5px;  
+}
+
+#actuacionMap h2{
+	color:#000000;	
+	text-align:center;
+	width:250px;	
+	margin:20px auto;
+	}
+	
+#actuacionMap #map_area{
+	float:left;
+	margin:30px 0 30px 0;
+	width:90%;
+	height:350px;
+	overflow:hidden;
+	}
+#actuacionMap #directions{	 
+	margin:25px auto;		
+	width:80%;
+	height:300px;
+	overflow:auto;
+	background-color:#FFFF44;
+	border:1px red solid;		
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+	}
+#actuacionMap #map_canvas{
+		margin: auto;
+		width: 90%;
+		height: 400px;
+		border:2px double #ececec;
+		padding:10px;
+	}
+#actuacionMap div.text{
+		width:95%;
+		top:50px;
+		margin:auto;
+		text-align:center;
+	}
+
+	/* CSS Document */
+

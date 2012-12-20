@@ -42,7 +42,7 @@ $(document).ready(function(){
 			);
 		}		
 	});
-/////////////////////////////end Genral mobile//////////////////////////////////////////////////	
+//////////////////////////////////////end Genral mobile//////////////////////////////////////////////////	
 	// mapa-empresa
 	$('#empresa').bind('pageshow', function(){
 		var TITLE = 'La oficina de TITANIC Pro.',
@@ -67,7 +67,7 @@ $(document).ready(function(){
 		map.setCenter(latLng);
 		infowindow.open(map);
 	});
-//////////////////////////////end Empresa////////////////////////////////////////////////////////
+///////////////////////////////////////end Empresa////////////////////////////////////////////////////////
 	// leer Google Analytics
 	var ga = document.createElement('script'); ga.type = 'text/javascript';
 	ga.async = true;
@@ -78,7 +78,7 @@ $(document).ready(function(){
 	$(".upBoton a.upScroll").click(function(){
 		         $("body").animate({scrollTop:0},2000); 
 		       });
-///////////////////////////Cinco fotos aprecen-Perfil////////////////////////////////////////////////
+////////////////////////////////Cinco fotos aprecen-Perfil////////////////////////////////////////////////
 	 $('#masahiroPerfil').live("pageinit",function(){
 function playSlide(){
 $("#cincoFotosAparecen img").hide();//5 fotos puestas una por encima de otra
@@ -102,7 +102,7 @@ $('.botonReplay button').click(function(){
 playSlide();
 });//click
  });//live
-/////////////////////////////end Perfil//////////////////////////////////////////////////
+//////////////////////////////////////////////end Perfil//////////////////////////////////////////////////
 //Mapas-actuacionMap
 
 		var map;
@@ -231,6 +231,7 @@ function initializeCurrent(lat, lon){//GPS
          initialize();//inicia function initalize()
 		$('#from').focus(function(){
 				$(this).val('');//vaciar input
+				$("p.boloDestino").text(boloDestino);
 				}); 
 	
 	    $('#driveit').click(function(){//Text en #from		        
@@ -244,8 +245,8 @@ function initializeCurrent(lat, lon){//GPS
 				
 				var desdeText='Desde' + ' ' + srcAddr;
 				$("p.boloDestino").prepend(desdeText);//añade el origen 
-				var defaultText='¿De donde vienes?';				
-				$('#from').val(defaultText);//click y input value=default
+								
+				//click y input value=default
 				var mapPos = $('#actuacionMap #map_area').offset();//offset hasta el mapa
 				var mapPosTop=mapPos.top;
 				alert(mapPosTop);
@@ -254,7 +255,8 @@ function initializeCurrent(lat, lon){//GPS
 
          
 		 $("#currentPos").click(function(){
-		        navigator.geolocation.getCurrentPosition(locSuccess, locError);               
+		        navigator.geolocation.getCurrentPosition(locSuccess, locError); 
+				$("p.boloDestino").text(boloDestino);              
                 }); 
 		
 		 $("#driveitCurrent").click(function(){

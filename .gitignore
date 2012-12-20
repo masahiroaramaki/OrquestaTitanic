@@ -1,1 +1,4 @@
+#ignorar windows
 Thumbs.db
+#extensiones
+*.exe

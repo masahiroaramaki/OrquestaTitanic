@@ -25,19 +25,26 @@
        display:block;
        margin:10px auto;
 	     }
-/*/////////////////////////////////////////cinco fotos-Perfil////////////////////////////////////////*/  
- #cincoFotosAparecen{/*#perfil-donde aparecen fotos*/
+/*/////////////////////////////////////////cinco fotos-Perfil////////////////////////////////////////*/ 
+ p.boldAzul {
+      font-weight:bold;
+	  color:blue;
+	  background-color:#00FFFF;
+  }
+ .cincoFotosAparecen{/*#perfil-donde aparecen fotos*/
               width:260px;
 			  height:260px;
 			  position:relative;
 			  top: 20px;
 			  margin:auto;
 			  }
- div#cincoFotosAparecen img{/*#perfil-setting 5 fotos*/
+ .cincoFotosAparecen img{/*#perfil-setting 5 fotos*/
              position:absolute;
 			 top:2px;
-			 left:15px;
+			 left:5px;
+		
              }
+
  div.botonReplay{/*#perfil-boton debajo de las 5 fotos*/
           width:100px;
           position:relative;
@@ -51,6 +58,7 @@
 		 margin:auto;
 		 overflow:auto;
           }
+	
 /*/////////////////////////////////////////////Empresa/////////////////////////////////////////////////*/
 
 #empresa .bold {/*empresa-letra de la presentación*/

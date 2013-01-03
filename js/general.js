@@ -19,7 +19,7 @@ _gaq.push(['_setAccount', 'tracking code']);
 	// Boton volver
 	$.mobile.page.prototype.options.addBackBtn = true;	
 		
-
+     
 	// page tracking
 	$(':jqmData(role="page")').live('pageshow', function (event, ui) {
 		_gaq.push(['_trackPageview', $.mobile.activePage.jqmData('url')]);
@@ -41,7 +41,29 @@ $(document).ready(function(){
 //data-iconpos="notext" class="ui-btn-right"></a>//			
 			);
 		}		
-	});
+	//Boton up
+	$(".upBoton a.upScroll").click(function(){
+		         $("html,body").animate({scrollTop:0},2000); 
+		       }); 
+			   
+	//link externo
+	var linkExterno=$("a[href^='http://']");
+
+    linkExterno.click(function(){
+    var direccion=$(this).attr('href');
+    var respuesta=confirm('Link externo. Va a abrir nueva ventana del navegador.');
+     if(respuesta==true){
+          window.open(direccion, '_blank');
+		  return false;
+               }else{
+               return false;
+                }
+       });//click
+	
+	
+	});//ready function
+	
+	
 //////////////////////////////////////end Genral mobile//////////////////////////////////////////////////	
 	// mapa-empresa
 	$('#empresa').bind('pageshow', function(){
@@ -74,14 +96,12 @@ $(document).ready(function(){
 	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	var s = document.getElementsByTagName('script')[0];
 	s.parentNode.insertBefore(ga, s);
-    //Boton up
-	$(".upBoton a.upScroll").click(function(){
-		         $("body").animate({scrollTop:0},2000); 
-		       });
+   
 ////////////////////////////////Cinco fotos aprecen-Perfil////////////////////////////////////////////////
-	 $('#masahiroPerfil').live("pageinit",function(){
-function playSlide(){
-$("#cincoFotosAparecen img").hide();//5 fotos puestas una por encima de otra
+$('#masahiroPerfil,#raulPerfil').live('pageshow',function(){
+ function playFadingFotos(){
+$(".cincoFotosAparecen img").hide();
+alert('estoy aqui');//5 fotos puestas una por encima de otra
 $(".botonReplay").hide();
 $("img.primera").fadeIn(1000).delay(5000).fadeOut(1000,function(){//callback y empieza la siguiente
 $("img.segunda").fadeIn(1000).delay(5000).fadeOut(1000,function(){
@@ -96,12 +116,12 @@ $("img.primera").fadeIn(1000,function(){//Con la primera se para
 });//tercera
 });//segunda
 });//primera
-}//function playSlide()
-playSlide();//replay al pulsar el boton
 $('.botonReplay button').click(function(){
-playSlide();
-});//click
- });//live
+ playFadingFotos();
+});
+}//function playFadingFotos()
+playFadingFotos();
+});//ready function
 //////////////////////////////////////////////end Perfil//////////////////////////////////////////////////
 //Mapas-actuacionMap
 
@@ -250,7 +270,7 @@ function initializeCurrent(lat, lon){//GPS
 				var mapPos = $('#actuacionMap #map_area').offset();//offset hasta el mapa
 				var mapPosTop=mapPos.top;
 				alert(mapPosTop);
-				$("body").animate({scrollTop:mapPosTop-120},2000); //scroll down hasta nombres de pueblo			
+				$("html,body").animate({scrollTop:mapPosTop-120},2000); //scroll down hasta nombres de pueblo			
 		});//click drivit
 
          
@@ -268,12 +288,11 @@ function initializeCurrent(lat, lon){//GPS
 				directionsDisplay.setPanel(document.getElementById("directions"));
 				var desdeTextCurrent='Desde tu ubicación actual';
 				$("p.boloDestino").prepend(desdeTextCurrent);
-				var mapPos = $('#actuacionMap #map_area').offset();
-				var mapPosTop=mapPos.top;
+				
 				var mapPos = $('#actuacionMap #map_area').offset();
 				var mapPosTop=mapPos.top;
 				alert(mapPosTop);
-				 $("body").animate({scrollTop:mapPosTop-120},2000); 
+				 $("html,body").animate({scrollTop:mapPosTop-120},2000); 
                    
                 }); 
 		 
